@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test"
-import { BasePage } from "./basePage"
+import { BasePage } from "./aDS_basePage"
 import access from "../../testData/automationDemoSite/aDS_access.json"
 
 export class Navigate extends BasePage {

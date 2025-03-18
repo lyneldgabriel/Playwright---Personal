@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test"
-import { BasePage } from "./basePage"
+import { BasePage } from "./aDS_basePage"
 import register from "../../testData/automationDemoSite/aDS_register.json"
 
 export class Register extends BasePage {
@@ -9,9 +9,9 @@ export class Register extends BasePage {
     }
 
     async registerToADS () {
-        const commonLocators = await this.commonLocators
-        commonLocators.populateTextboxViaNgModel('Full Name* ','FirstName',register.aDS.fName)
-        commonLocators.populateTextboxViaNgModel('Full Name* ','LastName',register.aDS.lName)
+        const commonLocators = this.commonLocators
+        await commonLocators.populateTextboxViaNgModel('Full Name* ','FirstName',register.aDS.fName)
+        await commonLocators.populateTextboxViaNgModel('Full Name* ','LastName',register.aDS.lName)
     }
 
     // async scrollingFlowTitle () {

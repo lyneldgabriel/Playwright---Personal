@@ -1,5 +1,5 @@
 import {Page} from "@playwright/test"
-import { CommonLocators } from "./commonLocators"
+import { CommonLocators } from "./aDS_commonLocators"
 
 export class BasePage {
     readonly page: Page

@@ -1,5 +1,5 @@
 import {test} from "@playwright/test"
-import { PageManager } from "../../pageObjects/automationDemoSite/pageManager"
+import { PageManager } from "../../pageObjects/automationDemoSite/aDS_pageManager"
 
 test.slow()
 

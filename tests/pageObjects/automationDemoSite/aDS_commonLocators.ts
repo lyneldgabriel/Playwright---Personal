@@ -8,12 +8,20 @@ export class CommonLocators {
         this.page = page
     }
 
+    // async populateTextboxViaNgModel (textboxName:string, ngmodel:string, value:string) {
+    //     const textboxLocatorViaNgModel = this.page.locator(`div.form-group:has-text("${textboxName}") input[ng-model="${ngmodel}"]`)
+    //     await textboxLocatorViaNgModel.fill(value)
+    // }
+
     async populateTextboxViaNgModel (textboxName:string, ngmodel:string, value:string) {
-        const textboxLocatorViaNgModel = this.page.locator(`div:has-text("${textboxName}") input[ng-model="${ngmodel}"]`)
+        const textboxLocatorViaNgModel = this.page.locator(`label:has-text("${textboxName}") + div input[ng-model="${ngmodel}"]`)
         await textboxLocatorViaNgModel.fill(value)
     }
 
-    
+    async populateTextbox (textboxName:string,value:string) {
+        const textboxLocatorViaNgModel = this.page.getByRole('textbox', {name:`${textboxName}`})
+        await textboxLocatorViaNgModel.fill(value)
+    }
 }
 
 /*
