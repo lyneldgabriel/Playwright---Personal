@@ -12,6 +12,14 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  //Global
+  globalTimeout: 240000,
+  //Test Run Timeout
+  timeout: 10000,
+  //Assertion Timeout
+  expect:{
+    timeout: 1000
+  },
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -34,6 +42,18 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    {
+      name: 'aDS',
+      testMatch: 'aDS.spec.ts',
+      retries: 1,
+      use: {
+        browserName: 'chromium',
+        //viewport: {width: 1280, height: 800},
+        viewport: { width: 1920, height: 1080 },
+        headless: false
+      }
+    },
+
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
